@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Add Travel Plan</title>
+    </head>
+    <body>
+        <h1>Add a Travel Plan</h1>
+        <form class="" action="/createTrip" method="post">
+            {%csrf_token%}
+            <input type="text" name="place" placeholder="Destination"><br>
+            <input type="text" name="desc" placeholder="Description"><br>
+            <input type="date" name="startDate" placeholder="Travel Start Date"><br>
+            <input type="date" name="endDate" placeholder="Travel End Date"><br>
+            <input type="submit" name="" value="Add Trip!">
+        </form><br><br>
+
+        {%for message in messages%}
+            <p>{{message}}</p>
+        {%endfor%}
+
+        <a href="/my_page">Home</a><br>
+        <a href="/logout">Logout</a>
+
+    </body>
+</html>

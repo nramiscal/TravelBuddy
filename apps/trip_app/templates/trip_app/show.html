@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{trip.place}}</title>
+    </head>
+    <body>
+        <h1>{{trip.place}}</h1>
+        <h3>Planned by: {{trip.planner.name}}</h3>
+        <h3>Travel Start Date: {{trip.startDate}}</h3>
+        <h3>Travel End Date: {{trip.endDate}}</h3>
+        <br>
+        <h2>Other Users Joining This Trip:</h2>
+        {%for join in joins%}
+            {%if join.user.id != trip.planner.id%}
+                <h4>{{join.user.name}}</h4>
+            {%endif%}
+        {%endfor%}
+
+    </body>
+    <a href="/my_page">Home</a><br>
+    <a href="/logout">Logout</a>
+</html>
